@@ -130,7 +130,7 @@ endif()
 # ---------------------------------------------------------
 # pthread linking (skip for QNX)
 # ---------------------------------------------------------
-if(CMAKE_SYSTEM_NAME STREQUAL "QNX")
+if(CMAKE_SYSTEM_NAME MATCHES "QNX")
     message(STATUS "QNX detected -> skipping Threads::Threads (no -lpthread on QNX)")
 else()
     target_link_libraries(xcplib PUBLIC Threads::Threads)
